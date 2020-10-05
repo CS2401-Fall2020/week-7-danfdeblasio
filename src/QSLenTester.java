@@ -15,7 +15,7 @@ public class QSLenTester {
     example1.next.next.next.val = "Alvorado";
     example1.next.next.next.next = new StringLL();
     example1.next.next.next.next.val = "Berkowitz";
-    example1 = StringLL.quicksortLengths(example1);
+    example1 = StringLL.mergeSortLengths(example1);
     assert(example1.val.equals("Flores"));
     assert(example1.next.val.equals("Alvorado"));
     assert(example1.next.next.val.equals("DeBlasio"));
@@ -32,7 +32,7 @@ public class QSLenTester {
     example2.next.next.next.val = "DD";
     example2.next.next.next.next = new StringLL();
     example2.next.next.next.next.val = "E";
-    example2 = StringLL.quicksortLengths(example2);
+    example2 = StringLL.mergeSortLengths(example2);
     assert(example2.val.equals("E"));
     assert(example2.next.val.equals("DD"));
     assert(example2.next.next.val.equals("CCC"));
@@ -52,6 +52,7 @@ public class QSLenTester {
     int ctr = 3;
     while(current != null) {
       assert(current.countElements() == ctr--);
+      current = current.next;
     }
     
     StringLL example4 = new StringLL();
@@ -64,6 +65,7 @@ public class QSLenTester {
     assert(example3.next.toString().equals("B, C"));
     assert(example3.next.next.toString().equals("C"));
 
+    System.out.println("All assert tests passed");
     
 
   }
